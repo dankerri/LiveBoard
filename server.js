@@ -1,50 +1,35 @@
 var io = require('socket.io')();
 
-var roomList = [ ];
-
-var codeInRoom = { };
-
 io.on('connection', client=>{
-	console.log('client connected');
-
-	//LiveBoard Side
+	// Search room Side
 	client.on('check', room=>{
 		console.log('check ' + room);
 
-		if( roomList.indexOf(room) > -1 ) {
-			client.emit('exist', ' ');
+		if ( io.sockets.adapter.rooms[room] === undefined ) {
+			client.emit('unexist', 'THE '+ room +' DOSEN\'T CREATE YET');			
 		}
 		else {
-			client.emit('unexist', 'The room dosen\'t create yet');
+			client.emit('exist');
 		}
 	});
 
+	// LiveBoard side
 	client.on('addUser', room =>{
 		client.join(room);
-		console.log("add a user");
+		console.log("Add a USER");
 	})
 
 
 	// Scanner side
-	client.on('addRoom', (room)=>{
-		if(roomList.indexOf(room) > -1 ) {
-			console.log('room '+ room +' exist');
-
-		} 
-		else {
-			roomList.push(room);	
-
-			codeInRoom[room] = ' ';
-			console.log('create room ' + room);
-			
-			client.join(room);
-		}
+	client.on('addScanner', (room)=>{
+		client.join(room);
+		console.log("THEER ARE "+ io.sockets.adapter.rooms[room].length +" SCANNER NOW.")
 	});
 
 	client.on('updateCode', code=>{
-		io.sockets.in(code.room).emit('newCode', code.date)
-	})
-
+		io.sockets.in(code.room).emit('newCode', code.code);
+		console.log("GET UPDATE");
+	});
 });
 
 io.listen(5000);

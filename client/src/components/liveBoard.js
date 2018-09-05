@@ -11,23 +11,14 @@ class LiveBoard extends Component {
 		super(props);
 
 		this.state = {
-			code: ' ',
+			code: 'wait a moument',
 			room: this.props.match.params.id
 		}
-		// console.log(this.props.match.params.id);
 	}
+	
 	componentDidMount() {
-
 		// join the room
 		socket.emit('addUser', this.state.room)
-
-		socket.on('newCode', code=>{
-			this.setState({
-				code: code
-			})
-
-			this.generateCode()
-		})
 	}
 
 	generateCode() {
@@ -40,6 +31,13 @@ class LiveBoard extends Component {
 	}
 
 	render() {
+		socket.on('newCode', code=>{
+			this.setState({
+				code: code
+			})
+
+			this.generateCode()
+		})
 		return(
 			<div>
 				<h1>{this.state.room.toUpperCase()}</h1>
