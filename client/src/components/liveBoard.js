@@ -21,17 +21,9 @@ class LiveBoard extends Component {
 		// join the room
 		socket.emit('addUser', this.state.room)
 
-		socket.on('hi', hello=>{
+		socket.on('newCode', code=>{
 			this.setState({
-				code: hello
-			})
-
-			this.generateCode()
-		})
-
-		socket.on('init', initCode=>{
-			this.setState({
-				code: initCode
+				code: code
 			})
 
 			this.generateCode()
