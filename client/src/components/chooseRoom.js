@@ -19,12 +19,12 @@ export default class ChooseRoom extends Component {
 
 	searchRoom(e) {
 		e.preventDefault()
-		socket.emit('check', this.state.room)
+		socket.emit('check', this.state.room.toUpperCase())
 	}
 
 	handleChange(e) {
 		this.setState({
-			room: e.target.value.toUpperCase()
+			room: e.target.value
 		})
 	}
 
@@ -55,3 +55,4 @@ export default class ChooseRoom extends Component {
 		)
 	}
 }
+

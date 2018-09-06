@@ -6,9 +6,10 @@ io.on('connection', client=>{
 		console.log('check ' + room);
 
 		if ( io.sockets.adapter.rooms[room] === undefined ) {
-			client.emit('unexist', 'THE '+ room +' DOSEN\'T CREATE YET');			
+			client.emit('unexist', 'THE '+ room +' DOSEN\'T CREATE YET');
+			console.log(io.sockets.adapter.rooms)			
 		}
-		else {
+		else { 
 			client.emit('exist');
 		}
 	});
@@ -23,12 +24,16 @@ io.on('connection', client=>{
 	// Scanner side
 	client.on('addScanner', (room)=>{
 		client.join(room);
-		console.log("THEER ARE "+ io.sockets.adapter.rooms[room].length +" SCANNER NOW.")
+		console.log("THEER ARE "
+			+ io.sockets.adapter.rooms[room].length 
+			+ " GUYS IN THE "
+			+ room 
+			+ " NOW.")
 	});
 
 	client.on('updateCode', code=>{
 		io.sockets.in(code.room).emit('newCode', code.code);
-		console.log("GET UPDATE");
+		console.log("GET "+code.room+" UPDATE");
 	});
 });
 

@@ -12,7 +12,7 @@ class LiveBoard extends Component {
 
 		this.state = {
 			code: 'wait a moument',
-			room: this.props.match.params.id
+			room: this.props.match.params.id.toUpperCase()
 		}
 	}
 	
@@ -40,7 +40,7 @@ class LiveBoard extends Component {
 		})
 		return(
 			<div>
-				<h1>{this.state.room.toUpperCase()}</h1>
+				<h1>{this.state.room}</h1>
 				<canvas id="canvas"></canvas>
 				<p className="title">{this.state.code}</p>
 			</div>
