@@ -39,7 +39,7 @@ class LiveBoard extends Component {
 			this.generateCode()
 		})
 		return(
-			<div>
+			<div className="LiveBoard">
 				<h1>{this.state.room}</h1>
 				<canvas id="canvas"></canvas>
 				<p className="title">{this.state.code}</p>
