@@ -1,10 +1,10 @@
 ### QR code LiveBoard
-Live qrcode on the webpage [LiveBoard](http://207.148.102.115)
+Web Live QR code  [LiveBoard](http://207.148.102.115)
 
 ### Introduction
-There are two charaters: Scanner and User.
-1. `Scanner`, using the Scanner app scan QR code and then streams it to the LiveBoard.
-2. `User`, People who visits LiveBoard.
+Charaters:
+1. `Scanner`, using the Scanner app scan target QR code and then streams it to the LiveBoard.
+2. `User`, people who visits LiveBoard.
 
 ### Usage: User
 1. Input the room name, then click `search`.
@@ -17,5 +17,5 @@ THE ROOM_NAME HAVEN'T BEEN CREATED YET.
 
 ### Usage: Scanner
 1. Input room and then click `Go`.(Which creates a room or join an existed one.)
-2. Then keep scanning QR code, the QR code will be stream to LiveBoard
-3. `Remember` kill background process after streaming finish.
+2. Scan the target QR code,and you might nedd to keep scanning if the QR code is auto-refreshing.
+3. `Remember` to kill background process after usage.
