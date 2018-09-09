@@ -1,5 +1,5 @@
 ### QR code LiveBoard
-Web Live QR code  [LiveBoard](http://207.148.102.115)
+Web Live QR code  [LiveBoard](http://shareqr.ga/)
 
 ### Introduction
 Charaters:
