@@ -11,7 +11,8 @@ export default class ChooseRoom extends Component {
 		super()
 		this.state = {
 			room: ' ',
-			res: ' '
+			res: ' ',
+			learnmore: ' '
 		}
 		this.searchRoom = this.searchRoom.bind(this)
 		this.handleChange = this.handleChange.bind(this);
@@ -34,7 +35,8 @@ export default class ChooseRoom extends Component {
 		})
 		socket.on('unexist', (res)=>{
 			this.setState({
-				res: res
+				res: res,
+				learnmore: "Learn how to use LiveBoard :)"
 			})
 		})
 		
@@ -53,6 +55,7 @@ export default class ChooseRoom extends Component {
     	</form>
 
     	<p>{this.state.res}</p>
+    	<a href="https://github.com/dankerri/Qrcode-LiveBoard">{this.state.learnmore}</a>
     	</div>
 		)
 	}

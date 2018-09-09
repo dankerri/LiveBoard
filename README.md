@@ -14,8 +14,14 @@ THE ROOM_NAME HAVEN'T BEEN CREATED YET.
 ```
 3. If the room is matched, User can see "wait a moment" , QRcode scanned will be displayed on Liveboard.
 4. `Remember close the page after using.`
+![If room haven't been created yet](./readme_pic/failed.png)
+
+![Room matched](./readme_pic/success.png)
 
 ### Usage: Scanner
 1. Input room and then click `Go`.(Which creates a room or join an existed one.)
 2. Scan the target QR code,and you might nedd to keep scanning if the QR code is auto-refreshing.
 3. `Remember` to kill background process after usage.
+![create room](./readme_pic/create.jpg)
+
+![scanning.jpg](./readme_pic/scanning.jpg)
