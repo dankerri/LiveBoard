@@ -1,7 +1,7 @@
 ### QR code LiveBoard
 Web Live QR code  [LiveBoard](http://shareqr.ga/)
 
-Download Scanner App [here](https://github.com/dankerri/Qrcode-LiveBoard/releases)
+Download Scanner App [here](https://github.com/dankerri/Qrcode-LiveBoard/releases) (Android only)
 
 ### Introduction
 Charaters:
