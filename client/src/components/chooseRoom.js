@@ -41,16 +41,18 @@ export default class ChooseRoom extends Component {
 		return(
 			<div className="searchBar">
 			<form onSubmit={this.searchRoom}>
-    		<input 
+    		<input
+		 className="theText" 
     		 type="text" 
     		 placeholder="Input classroom number"
     		 onChange={this.handleChange}/>
-    		<input  
+    		<input
+		 className="theButton"  
     		 type="submit" 
     		 value="search"/>
     	</form>
 
-    	<h1>{this.state.res}</h1>
+    	<p>{this.state.res}</p>
     	</div>
 		)
 	}

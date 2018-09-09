@@ -1,8 +1,24 @@
 .searchBar {
+	font-family: arial;
 	width: 50%;
 	margin-top: 5em;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.searchBar form {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+p {
+	text-align: center;
+}
+
+.theText,
+.theButton {
+	padding: 1em;
 }
 
 .LiveBoard {
