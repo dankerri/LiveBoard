@@ -1,5 +1,5 @@
 ### QR code LiveBoard
-Web Live QR code  [LiveBoard](http://shareqr.ga/)
+Web Live QR code  [LiveBoard](http://www.shareqr.ga/)
 
 ### Introduction
 Charaters:
@@ -7,6 +7,7 @@ Charaters:
 2. `User`, people who visits LiveBoard.
 
 ### Usage: User
+0. Use `chrome` to get the best experiment.
 1. Input the room name, then click `search`.
 2. If it dosen't matchs the room, LiveBoard will return.
 ```bash
