@@ -37,27 +37,28 @@ export default class ChooseRoom extends Component {
 		socket.on('unexist', (res)=>{
 			this.setState({
 				res: res,
-				tips: "Learn how to use LiveBoard :)"
+				tips: "> Learn how to use LiveBoard :)"
 			})
 		})
 		
 		return(
 		<div className="searchBar">
-		<form onSubmit={this.searchRoom}>
-    		<input
-		 className="theText" 
-    		 type="text" 
-    		 placeholder="Input classroom number"
-    		 onChange={this.handleChange}/>
-    		<input
-		 className="theButton"  
-    		 type="submit" 
-    		 value="search"/>
-    		</form>
+			<form onSubmit={this.searchRoom}>
+	  		<input
+					 className="theText" 
+	    		 type="text" 
+	    		 placeholder="Input classroom number"
+	    		 onChange={this.handleChange}/>
+	  		<input
+		 			className="theButton"  
+	  		 	type="submit" 
+	  		 	value="search"/>
+	    </form>
 
-    		<p>{this.state.res}</p>
-		<a href="https://github.com/dankerri/Qrcode-LiveBoard">{this.state.tips}</a>
-    		</div>
+			<p>{this.state.res}</p>
+			<a href="./scanner.apk" download>> Get Scanner App</a>
+			<a href="https://github.com/dankerri/LiveBoard">{this.state.tips}</a>
+    </div>
 
 		)
 	}
