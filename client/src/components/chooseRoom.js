@@ -8,11 +8,12 @@ const socket = io(THE_URL);
 export default class ChooseRoom extends Component {
 	
 	constructor() {
+
 		super()
 		this.state = {
 			room: ' ',
 			res: ' ',
-			learnmore: ' '
+			tips: '',
 		}
 		this.searchRoom = this.searchRoom.bind(this)
 		this.handleChange = this.handleChange.bind(this);
@@ -36,13 +37,13 @@ export default class ChooseRoom extends Component {
 		socket.on('unexist', (res)=>{
 			this.setState({
 				res: res,
-				learnmore: "Learn how to use LiveBoard :)"
+				tips: "Learn how to use LiveBoard :)"
 			})
 		})
 		
 		return(
-			<div className="searchBar">
-			<form onSubmit={this.searchRoom}>
+		<div className="searchBar">
+		<form onSubmit={this.searchRoom}>
     		<input
 		 className="theText" 
     		 type="text" 
@@ -52,11 +53,12 @@ export default class ChooseRoom extends Component {
 		 className="theButton"  
     		 type="submit" 
     		 value="search"/>
-    	</form>
+    		</form>
 
-    	<p>{this.state.res}</p>
-    	<a href="https://github.com/dankerri/Qrcode-LiveBoard">{this.state.learnmore}</a>
-    	</div>
+    		<p>{this.state.res}</p>
+		<a href="https://github.com/dankerri/Qrcode-LiveBoard">{this.state.tips}</a>
+    		</div>
+
 		)
 	}
 }
