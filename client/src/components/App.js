@@ -6,7 +6,6 @@ import {
 // self component
 import ChooseRoom from './chooseRoom'
 import LiveBoard from './liveBoard'
-import Emu from './emu'
 // style
 import '../css/App.css'
 
@@ -16,7 +15,6 @@ const App = () => (
 		<div>
 			<Route exact path="/" component={ChooseRoom} />
 			<Route path="/LiveBoard/:id" component={LiveBoard} />
-			<Route path="/emu" component={Emu} />
 		</div>
 
 	</Router>

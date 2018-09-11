@@ -13,7 +13,6 @@ export default class ChooseRoom extends Component {
 		this.state = {
 			room: ' ',
 			res: ' ',
-			tips: '',
 		}
 		this.searchRoom = this.searchRoom.bind(this)
 		this.handleChange = this.handleChange.bind(this);
@@ -37,7 +36,6 @@ export default class ChooseRoom extends Component {
 		socket.on('unexist', (res)=>{
 			this.setState({
 				res: res,
-				tips: "> Learn how to use LiveBoard :)"
 			})
 		})
 		
@@ -57,7 +55,7 @@ export default class ChooseRoom extends Component {
 
 			<p>{this.state.res}</p>
 			<a href="./scanner.apk" download>> Get Scanner App</a>
-			<a href="https://github.com/dankerri/LiveBoard">{this.state.tips}</a>
+			<a href="./tips.html"> > Learn how to use LiveBoard :) </a>
     </div>
 
 		)
