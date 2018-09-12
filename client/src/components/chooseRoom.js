@@ -45,7 +45,7 @@ export default class ChooseRoom extends Component {
 	  		<input
 					 className="theText" 
 	    		 type="text" 
-	    		 placeholder="Input classroom number"
+	    		 placeholder="Input ROOM number"
 	    		 onChange={this.handleChange}/>
 	  		<input
 		 			className="theButton"  

@@ -46,6 +46,7 @@ a:hover {
 }
 .theButton {
 	border-radius: 0 15px 15px 0;
+	outline:none;
 	background-color: #00cc7a;
 	color: white;
 	border: #00cc7a;
