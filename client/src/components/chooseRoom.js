@@ -20,7 +20,7 @@ export default class ChooseRoom extends Component {
 
 	searchRoom(e) {
 		e.preventDefault()
-		socket.emit('check', this.state.room.toUpperCase())
+		socket.emit('sitdown', this.state.room.toUpperCase())
 	}
 
 	handleChange(e) {
@@ -32,11 +32,6 @@ export default class ChooseRoom extends Component {
 	render() {
 		socket.on('exist', (res)=> {
 			this.props.history.replace('/LiveBoard/'+this.state.room);
-		})
-		socket.on('unexist', (res)=>{
-			this.setState({
-				res: res,
-			})
 		})
 		
 		return(

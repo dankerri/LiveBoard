@@ -2,15 +2,10 @@ var io = require('socket.io')();
 
 io.on('connection', client=>{
 	// Search room Side
-	client.on('check', room=>{
-		console.log('check ' + room );
-		if ( io.sockets.adapter.rooms[room] === undefined ) {
-			client.emit('unexist', 'THE '+ room +' HAVEN\'T BEEN CREATED YET');
-			// console.log(io.sockets.adapter.rooms)			
-		}
-		else { 
-			client.emit('exist'); 
-		}
+	client.on('sitdown', room=>{
+		console.log("visitor sits down in" + room);
+		client.emit('exist');
+
 	});
 
 	// LiveBoard side
